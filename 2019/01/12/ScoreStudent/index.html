@@ -13,6 +13,9 @@
     
 
     
+        <meta name="description" content="编写一个考试成绩统计程序，将从键盘上输入的学生考试成绩（最多40个），计算输出学生平均成绩，以及不及格学生数量（成绩&amp;lt;60分）和成绩优秀学生数量（成绩&amp;gt;=90分）。
+12345678910111213141516171819202122232425262728package scoreS">
+    
 
     <!--Author-->
     
@@ -21,10 +24,13 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Hexo">
+        <meta property="og:title" content="ScoreStudent">
     
 
     <!--Open Graph Description-->
+    
+        <meta property="og:description" content="编写一个考试成绩统计程序，将从键盘上输入的学生考试成绩（最多40个），计算输出学生平均成绩，以及不及格学生数量（成绩&amp;lt;60分）和成绩优秀学生数量（成绩&amp;gt;=90分）。
+12345678910111213141516171819202122232425262728package scoreS">
     
 
     <!--Open Graph Site Name-->
@@ -32,7 +38,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website">
+        <meta property="og:type" content="article">
     
 
     <!--Page Cover-->
@@ -51,7 +57,7 @@
 
     <!-- Title -->
     
-    <title>Archives: 2019/1 - Hexo</title>
+    <title>ScoreStudent - Hexo</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -153,101 +159,79 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>2019/1</h1>
+                <div class="post-heading">
+                    <h1>ScoreStudent</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2019-01-12
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/2017/">#2017</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/Java/">Java</a>
+
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2019/01/12/ScoreStudent/">
-        <h1 class="post-title archive">
-            ScoreStudent
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2019-01-12
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2019/01/12/StrDigital/">
-        <h1 class="post-title archive">
-            StrDigital
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2019-01-12
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>编写一个考试成绩统计程序，将从键盘上输入的学生考试成绩（最多40个），计算输出学生平均成绩，以及不及格学生数量（成绩&lt;60分）和成绩优秀学生数量（成绩&gt;=90分）。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> scoreStudent;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ScoreStudnet</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		Scanner scan = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		<span class="keyword">int</span>[] score = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">50</span>];<span class="comment">//定义一个数组,存储学生成绩</span></span><br><span class="line">		<span class="keyword">int</span> length = <span class="number">0</span>, sum = <span class="number">0</span>, lowScore = <span class="number">0</span>, highScore = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">while</span>(scan.hasNextInt()) &#123; <span class="comment">//是否还有成绩输入</span></span><br><span class="line">			<span class="keyword">int</span> a = scan.nextInt(); <span class="comment">//学生成绩</span></span><br><span class="line">			score[length++] = a;</span><br><span class="line">			<span class="keyword">if</span>(a &lt; <span class="number">60</span>) lowScore++;  <span class="comment">//成绩低于60的，不及格人数加1</span></span><br><span class="line">			<span class="keyword">if</span>(a &gt;= <span class="number">90</span>) highScore++;  <span class="comment">//成绩大于等于90的，优秀人数加1</span></span><br><span class="line">			sum += a;  <span class="comment">//总成绩</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//平均成绩</span></span><br><span class="line">		<span class="keyword">double</span> average = (<span class="keyword">double</span>)sum / (length * <span class="number">0.01</span>);</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"学生平均成绩为："</span> + average);</span><br><span class="line">		System.out.println(<span class="string">"不及格学生数量为："</span> + lowScore); <span class="comment">//不及格人数</span></span><br><span class="line">		System.out.println(<span class="string">"成绩优秀学生数量为："</span> + highScore);<span class="comment">//成绩优秀人数</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/2019/01/12/Factorial/">
-        <h1 class="post-title archive">
-            Factorial
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2019-01-12
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
             
-                <div class="post-preview">
-    <a href="/2019/01/11/BubbleSort/">
-        <h1 class="post-title archive">
-            BubbleSort
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2019-01-11
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2019/01/11/hello-world/">
-        <h1 class="post-title archive">
-            Hello World
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2019-01-11
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-</ul>
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr>
