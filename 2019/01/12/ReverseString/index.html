@@ -13,6 +13,9 @@
     
 
     
+        <meta name="description" content="请编写程序，将用户输入否认一个字符串（不多于100个字符），其中的单词按照逆序，重新输出。例如输入字符串”this is a dog”，输出为”dog a is this”。
+123456789101112131415161718package reverseString;import java.u">
+    
 
     <!--Author-->
     
@@ -21,10 +24,13 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Hexo">
+        <meta property="og:title" content="ReverseString">
     
 
     <!--Open Graph Description-->
+    
+        <meta property="og:description" content="请编写程序，将用户输入否认一个字符串（不多于100个字符），其中的单词按照逆序，重新输出。例如输入字符串”this is a dog”，输出为”dog a is this”。
+123456789101112131415161718package reverseString;import java.u">
     
 
     <!--Open Graph Site Name-->
@@ -32,7 +38,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website">
+        <meta property="og:type" content="article">
     
 
     <!--Page Cover-->
@@ -51,7 +57,7 @@
 
     <!-- Title -->
     
-    <title>2017 - Hexo</title>
+    <title>ReverseString - Hexo</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -153,114 +159,79 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>#2017</h1>
+                <div class="post-heading">
+                    <h1>ReverseString</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2019-01-12
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/2017/">#2017</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/Java/">Java</a>
+
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2019/01/12/PrimeNumber/">
-        <h1 class="post-title archive">
-            PrimeNumber
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2019-01-12
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2019/01/12/ReverseString/">
-        <h1 class="post-title archive">
-            ReverseString
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2019-01-12
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>请编写程序，将用户输入否认一个字符串（不多于100个字符），其中的单词按照逆序，重新输出。例如输入字符串”this is a dog”，输出为”dog a is this”。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> reverseString;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReverseString</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		Scanner scan = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		String str1 = scan.nextLine();<span class="comment">//输入字符串</span></span><br><span class="line">		String[] strs = str1.split(<span class="string">" "</span>);<span class="comment">//以空格分割成多个字符串</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = strs.length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; --i) &#123;<span class="comment">//逆序输出</span></span><br><span class="line">			<span class="keyword">if</span>(i != strs.length - <span class="number">1</span>) System.out.print(<span class="string">" "</span>);</span><br><span class="line">			System.out.print(strs[i]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/2019/01/12/ScoreStudent/">
-        <h1 class="post-title archive">
-            ScoreStudent
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2019-01-12
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
             
-                <div class="post-preview">
-    <a href="/2019/01/12/StrDigital/">
-        <h1 class="post-title archive">
-            StrDigital
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2019-01-12
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2019/01/12/Factorial/">
-        <h1 class="post-title archive">
-            Factorial
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2019-01-12
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2019/01/11/BubbleSort/">
-        <h1 class="post-title archive">
-            BubbleSort
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2019-01-11
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-</ul>
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr>
