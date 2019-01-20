@@ -105,7 +105,7 @@
 <meta property="og:description" content="Mac下使用Hexo+Github搭建个人博客hexo博客系统搭建Hexo的介绍可以看看官方文档，说得很详细，简单的说就是一个博客框架。 1.Github账号注册及仓库创建 创建仓库的名字必须为username.github.io，我的用户名为Qreply，因此我创建的仓库就是Qreply.github.io，这是很关键的一点，很重要。输入名字后，直接点最下面绿色的按钮，创建新仓库。这一部分基本完">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190120140957877.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190120135541171.png?">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190120135541171.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190120141206769.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190120143803669.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190120144202127.png">
@@ -116,7 +116,7 @@
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190120161020474.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190120162109432.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190120164202734.png">
-<meta property="og:updated_time" content="2019-01-20T13:05:34.951Z">
+<meta property="og:updated_time" content="2019-01-20T13:09:44.023Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac下使用Hexo+Github搭建个人博客">
 <meta name="twitter:description" content="Mac下使用Hexo+Github搭建个人博客hexo博客系统搭建Hexo的介绍可以看看官方文档，说得很详细，简单的说就是一个博客框架。 1.Github账号注册及仓库创建 创建仓库的名字必须为username.github.io，我的用户名为Qreply，因此我创建的仓库就是Qreply.github.io，这是很关键的一点，很重要。输入名字后，直接点最下面绿色的按钮，创建新仓库。这一部分基本完">
@@ -345,7 +345,7 @@
                 
               
 
-              <time title="Created: 2019-01-20 16:44:44 / Modified: 21:05:34" itemprop="dateCreated datePublished" datetime="2019-01-20T16:44:44+08:00">2019-01-20</time>
+              <time title="Created: 2019-01-20 16:44:44 / Modified: 21:09:44" itemprop="dateCreated datePublished" datetime="2019-01-20T16:44:44+08:00">2019-01-20</time>
             
 
             
@@ -403,7 +403,7 @@
 
       
         <h1 id="Mac下使用Hexo-Github搭建个人博客"><a href="#Mac下使用Hexo-Github搭建个人博客" class="headerlink" title="Mac下使用Hexo+Github搭建个人博客"></a>Mac下使用Hexo+Github搭建个人博客</h1><h2 id="hexo博客系统搭建"><a href="#hexo博客系统搭建" class="headerlink" title="hexo博客系统搭建"></a>hexo博客系统搭建</h2><p>Hexo的介绍可以看看官方<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">文档</a>，说得很详细，简单的说就是一个博客框架。</p>
-<h3 id="1-Github账号注册及仓库创建"><a href="#1-Github账号注册及仓库创建" class="headerlink" title="1.Github账号注册及仓库创建"></a>1.Github账号注册及仓库创建</h3><p><img src="https://img-blog.csdnimg.cn/20190120140957877.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190120135541171.png?" alt="新建仓库"></p>
+<h3 id="1-Github账号注册及仓库创建"><a href="#1-Github账号注册及仓库创建" class="headerlink" title="1.Github账号注册及仓库创建"></a>1.Github账号注册及仓库创建</h3><p><img src="https://img-blog.csdnimg.cn/20190120140957877.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190120135541171.png" alt="新建仓库"></p>
 <p>创建仓库的名字必须为username.github.io，我的用户名为Qreply，因此我创建的仓库就是Qreply.github.io，这是很关键的一点，很重要。输入名字后，直接点最下面绿色的按钮，创建新仓库。这一部分基本完成了，接下去需要在终端操作。</p>
 <p><img src="https://img-blog.csdnimg.cn/20190120141206769.png" alt="仓库名称"></p>
 <h2 id="2-环境配置"><a href="#2-环境配置" class="headerlink" title="2.环境配置"></a>2.环境配置</h2><p>·安装git、node.js和hexo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#首先检查是否安装了git和node.js,终端输入以下命令</span><br><span class="line">node -v #是否出现安装版本信息，出现说明已经安装</span><br><span class="line">git --version #同上述情况</span><br><span class="line">如果没有安装，则进行安装</span><br><span class="line">#通过homebrew安装</span><br><span class="line">/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</span><br><span class="line">brew install git</span><br><span class="line">brew install node</span><br></pre></td></tr></table></figure></p>
