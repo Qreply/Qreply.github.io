@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[linux运行状态相关命令]]></title>
+    <url>%2F2019%2F01%2F20%2Flinux%E8%BF%90%E8%A1%8C%E7%8A%B6%E6%80%81%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4%2F</url>
+    <content type="text"><![CDATA[服务器运行状态相关命令ps查看系统进程线程 基本用法ps -aux 查看所有进程ps -T -p ${pid} 查看某个进程的线程 参考资料10个重要的Linux ps命令实战 pstree查看系统进程树，他可以把各个进程之间的关系用树形结构标识出来。 基本用法1pstree top查看系统进程线程运行情况，包裹资源的使用情况，系统负载等。 基本用法top 列出所有线程负载信息top -H 列出所有线程的负载信息top -H -p ${pid} 列出某个pid下所有线程的负载信息 free查看内存及使用情况 基本用法1free 文件操作相关cat查看配置文件，或者是日志文件，但是有点需要注意，cat命令会把整个文件输出到终端了，如果文件内容非常多，建议使用grep进行过滤，或者直接用less或more命令。 基本用法1cat file.txt tail查看某个文件的尾部，或者查看标准出入的最末尾，默认值显示10行，可以用-n参数来指定输出多少行。 基本用法tail -n 100 file.txt 输出最末尾的100行tail -f file.txt 随着文件新增，持续输出新增的内容，一般用来看实时日志 head和tail命令很相似，不过head是输出头部内容 基本用法head -n 100 file.txt 输出最开始的100行 more也是用来查看文件，但more命令只加载一屏的内容，可以向下翻动，因为加载的内容少，所以比cat快多了。 基本用法1more file.txt less和more很像，但是可以上下翻动 基本用法1less file.txt grep基本用法grep &quot;abc&quot; file 从file中筛选出包含 abc的行。 awk在文件有多列的时候，可以用awk输出具体某几列，或者做一些简单的统计 求和，求平均值啊，再或者做一下简单的数据格式化。 基本用法cat data | awk &#39;{print $1,$3,$5}&#39; 输出第1 3 5列，注意下标是从1开始cat data | awk &#39;{ sum += $1 } END { print sum }&#39; 对第一列求和cat data | awk -F&#39;\t&#39; &#39;{print $1,$3}&#39; 把每行数据按tab分列，并输出1 3列 参考资料阮一峰 awk介绍 sort对标准内容做排序， 基本用法cat file|sort 把file里的数据排序，注意是按字典序排的，如果想按数值排，需要能够加-n参数cat file|sort -k2 -n -r 按第二列 数值 倒序 排序，-k指定第几列，-r是翻转reverse的意思 uniq对排序好的内容去重，注意它只是把相邻且相同的去重，所以如果想要全局去重，需要先用sort排序。 基本用法cat file|sort|uniq 把file里的文件排序并去重cat file|sort|uniq -c 把file里的文件排序并去重，且输出每行出现的次数 sedparallellinux大部分命令都是单进程的，这个命令可以让其他命令多进程执行。 参考资料15分钟神器gnu parallel 入门观止 scp之前运维大量机器的时候，通常需要批量修改某个配置文件，都是在一台机器上改好，然后用scp脚本分发到其他机器上去的，大大提高效率。 基本用法scp aaa.txt test@192.168.1.3:/tmp/ 把当前目录下的aaa.txt文件通过192.168.1.3上的test账号放到/tmp目录下scp test@192.168.1.3:/tmp/aaa.txt . 和上一条相反 磁盘及IOdu查看目录大小 基本用法du -h --max-depth=1 输出最深1层的目录，然后文件大小用人类可读的方式，比如1K 234M 2G df查看磁盘大小和占用情况 基本用法df -h 查看各个分区的大小和使用情况 iostat查看磁盘的io状态 iotop可以类似于top目录一样，实时显示各个进程的io状态。 find查找文件，查找条件可以是文件名，文件日期，文件大小，很强大。 基本用法find /home/test -iname &quot;test.txt 在/home/test/下找文件名为test.txt的文件，也支持通配符find /home/test -isize +100M 查找/home/test下大于100M的文件 参考资料wikipedia unix find) locate定位某个具体文件的位置，locate命令要比find -name快得多，原因是它不搜索具体目录，而是搜索一个数据库/var/lib/mlocate/mlocate.db，这个数据库会通过一个cron定时更新，所以有可能新建的文件会检索不到。 基本用法locate a.txt 定位a.txt的位置，如果系统中有多个a.txt，会全部显示出来。 tree可以看到树状目录结构， 基本用法tree -L 2 只显示两层树状结构 网络ping查看网络是否通 基本用法1ping www.baidu.com ncnetcat，可以用来看远程某个端口是否打开，功能很强大，但是我用到的不多。 基本用法nc -z xindoo.me 443 检测我服务器上的443端口是否开放（当然是开的） 参考资料linux nc命令介绍 route查看和操作本机路由表 基本用法route 列出本地路由表 参考资料百度百科 route命令 netstat查看本机的网络状态，可以看到端口占用情况和网络链接情况。 基本用法1netstat -antp traceroute查看一个请求到目标服务器所经过的所有路由节点，一般用来排查网络问题。 基本用法1traceroute www.baidu.com 参考资料百度百科 netstat iftop查看实时网络io情况 lsof查看端口占用 dig查看域名的信息 基本用法1dig www.baidu.com 参考资料dig 命令介绍 curl发起一个http请求，来验证服务是否能正常访问的，它有获取html源码的功能。 基本用法curl www.baidu.comcurl -I www.baidu.com 获取请求baidu.com的请求头 参考资料curl的用法(英文) wget下载网络上一个文件，基本上就是有个命令行版的下载工具了。 基本用法wget xindoo.me/test.txt 把服务器上test.txt文件下载到本地 其他yum|apt install很多时候服务器上没有我们想要的工具，可以用这个命令安装下，yum是Fedora和RedHat以及CentOS中的Shell前端软件包管理器， apt是ubuntu平台上的。 基本用法12yum install curl``apt install curl man这个命令是用来查看其它命令手册的，可以看到具体某个命令的详细作用，和具体参数。这个是个很重要的命令了，一般他会比各命令自带的–help详细很多。 基本用法man curl 查看curl命令的手册]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Mac下使用Hexo+Github搭建个人博客]]></title>
+    <url>%2F2019%2F01%2F20%2FMac%E4%B8%8B%E4%BD%BF%E7%94%A8Hexo-Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%2F</url>
+    <content type="text"><![CDATA[Mac下使用Hexo+Github搭建个人博客hexo博客系统搭建Hexo的介绍可以看看官方文档，说得很详细，简单的说就是一个博客框架。 1.Github账号注册及仓库创建 创建仓库的名字必须为username.github.io，我的用户名为Qreply，因此我创建的仓库就是Qreply.github.io，这是很关键的一点，很重要。输入名字后，直接点最下面绿色的按钮，创建新仓库。这一部分基本完成了，接下去需要在终端操作。 2.环境配置·安装git、node.js和hexo12345678#首先检查是否安装了git和node.js,终端输入以下命令node -v #是否出现安装版本信息，出现说明已经安装git --version #同上述情况如果没有安装，则进行安装#通过homebrew安装/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;brew install gitbrew install node ·如果已经安装好了上述的软件，那么可以安装hexo，然后等待安装成功即可。1npm install -g hexo-cli ·创建blog文件夹，并初始化建立博客框架12345678# 在你的家目录下创建一个blog文件夹mkdir blog# 进入目录cd blog# 初始化目录hexo init开启本地服务 # hexo s 出现以下信息，说明你可以本地访问博客系统，在浏览器输入4000这个网址，就可以看到博客首页。 3. 博客关联到Github仓库在第一步的时候，我们已经将仓库创建好了，这里就需要用到了。 ·首先我们要编辑图中_config.yml文件，这是博客的主要配置文件，在下面一部分，我们要频繁使用这个配置文件，这里先编辑一步，为了管理GitHub账号。·打开文件之后，在文档最后，输入红色大框中的内容，只需要将你的username替换就可以了，其他无需更改。·然后在目录中执行1234# 产生静态网页hexo g# 部署到GitHub page上hexo d 然后你需要输入你GitHub的用户名和密码，这样你就就可以使用你的仓库名去访问你的博客主页了。为了每一次部署不必一种输入密码，我们可以生成秘钥，然后提交到GitHub，进行关联，那么你下次就不需要再输入密码了。·关联GitHub账号，免密提交 12345678# 用你注册GitHub时的邮箱号，进行秘钥生成cd ~ssh-keygen -t rsa -C &quot;xxxxxxx@qq.com&quot;# 系统就会生成一个隐藏文件夹.sshcd .sshls# 复制公钥vim id_rsa.pub 点击箭头的按钮，进入设置，然后点击SSH and GPG keys，创建新的SSH，将之前复制的公钥黏贴，提交，OK。 进入settings 4.博客的基本配置和发布新文章1.一些基本配置可以在_config.yml中进行修改，如博客名、作者名等，另外如果你采用了别的主题，在主题文件夹中也会有一个_config.yml文件，可以在里面进行主题的一些修改。2.发布新文章时，先执行以下命令：1hexo new post &apos;文章标题&apos; 这时在source-&gt;_posts文件下能看到新建的文章，是md格式，hexo支持markdown语法，我们可以用markdown编辑器进行编辑。3.更新到github我们每次做了修改后，都需要执行以下命令以更新github配置123hexo cleanhexo ghexo d 5. 绑定个人域名1)购买域名（我在腾讯云购买的域名）2)域名解析注册一个DNSPod账号，登录之后进入需要绑定的域名，在域名解析界面添加3条记录123@ A 192.30.252.153@ A 192.30.252.154www CNAME username.github.io. 如图所示：3)配置hexo新建一个名为CNAME的文件，无后缀，内容为你的域名地址。将该文件放入本地博客的source文件夹里面，并更新到Github。 1hexo d -g 到这里就绑定域名成功了。 6.Hexo博客美化及功能增添1）选主题Hexo官网：https://hexo.io/themes/里面有特别多的主题可以选择，我在这里选的是next这个主题。下载主题： 12cd ~/bloggit clone https://github.com/iissnan/hexo-theme-next themes/next ·修改站点配置文件：_config.yml，将里面76行的theme由landscape修改为next·更换新的主题，可能会有一些延迟]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[PrimeNumber]]></title>
+    <url>%2F2019%2F01%2F12%2F%E8%B4%A8%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[从键盘上随机输入20个正整数，找出并输出所包含的质数（质数是除了1和它本身之外，不能被其他数整除的正整数，例如2，3，5，11，13等）。 1234567891011121314151617181920212223242526272829package primeNumber;import java.util.Scanner;public class PrimeNumber &#123; public static boolean IsPrime(int a) &#123; //判断是否为质数 if(a == 1) return false; //1不是质数 for(int i = 2; i &lt;= Math.sqrt(a); ++i) &#123; if(a % i == 0) return false; &#125; return true; &#125; public static void main(String[] args) &#123; // TODO Auto-generated method stub Scanner scan = new Scanner(System.in); int[] arr = new int[21]; //定义一个数组 //输入20个正整数 for(int i = 0; i &lt; 20; ++i) arr[i] = scan.nextInt(); //找出质数并输出 for(int i = 0; i &lt; 20; ++i) &#123; //判断是不是质数，是就输出 if(IsPrime(arr[i])) System.out.print(arr[i] + " "); &#125; &#125;&#125;]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>2017</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ReverseString]]></title>
+    <url>%2F2019%2F01%2F12%2F%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%8D%E8%BD%AC%2F</url>
+    <content type="text"><![CDATA[请编写程序，将用户输入否认一个字符串（不多于100个字符），其中的单词按照逆序，重新输出。例如输入字符串”this is a dog”，输出为”dog a is this”。 123456789101112131415161718package reverseString;import java.util.Scanner;public class ReverseString &#123; public static void main(String[] args) &#123; // TODO Auto-generated method stub Scanner scan = new Scanner(System.in); String str1 = scan.nextLine();//输入字符串 String[] strs = str1.split(" ");//以空格分割成多个字符串 for(int i = strs.length - 1; i &gt;= 0; --i) &#123;//逆序输出 if(i != strs.length - 1) System.out.print(" "); System.out.print(strs[i]); &#125; &#125;&#125;]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>2017</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ScoreStudent]]></title>
+    <url>%2F2019%2F01%2F12%2F%E5%AD%A6%E7%94%9F%E6%88%90%E7%BB%A9%E7%BB%9F%E8%AE%A1%2F</url>
+    <content type="text"><![CDATA[编写一个考试成绩统计程序，将从键盘上输入的学生考试成绩（最多40个），计算输出学生平均成绩，以及不及格学生数量（成绩&lt;60分）和成绩优秀学生数量（成绩&gt;=90分）。 12345678910111213141516171819202122232425262728package scoreStudent;import java.util.Scanner;public class ScoreStudnet &#123; public static void main(String[] args) &#123; // TODO Auto-generated method stub Scanner scan = new Scanner(System.in); int[] score = new int[50];//定义一个数组,存储学生成绩 int length = 0, sum = 0, lowScore = 0, highScore = 0; while(scan.hasNextInt()) &#123; //是否还有成绩输入 int a = scan.nextInt(); //学生成绩 score[length++] = a; if(a &lt; 60) lowScore++; //成绩低于60的，不及格人数加1 if(a &gt;= 90) highScore++; //成绩大于等于90的，优秀人数加1 sum += a; //总成绩 &#125; //平均成绩 double average = (double)sum / (length * 0.01); System.out.println("学生平均成绩为：" + average); System.out.println("不及格学生数量为：" + lowScore); //不及格人数 System.out.println("成绩优秀学生数量为：" + highScore);//成绩优秀人数 &#125;&#125;]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>2017</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[StrDigital]]></title>
+    <url>%2F2019%2F01%2F12%2F%E5%AD%97%E7%AC%A6-%E6%95%B0%E5%AD%97%E7%BB%9F%E8%AE%A1%2F</url>
+    <content type="text"><![CDATA[从键盘输入一个字符串（不多于80个字符），将其中的数字字符按原顺序组成一个新字符串，并输出。 1234567891011121314151617181920212223242526package numString;import java.util.Scanner;public class NumString &#123; public static void main(String[] args) &#123; // TODO Auto-generated method stub Scanner scan = new Scanner(System.in); String str = scan.next(); //输入一个字符串 char [] strArr = str.toCharArray(); //把字符串转为数组 StringBuffer buf = new StringBuffer(); for(int i = 0; i &lt; strArr.length; ++i) &#123; char a = strArr[i]; if(Character.isDigit(a)) //判断是否为数字 buf.append(a); &#125; String s = buf.toString(); //转换为字符串 System.out.println(s); //输出新字符串 &#125;&#125;]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>2017</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Factorial]]></title>
+    <url>%2F2019%2F01%2F12%2Fn%E7%9A%84%E9%98%B6%E4%B9%98%2F</url>
+    <content type="text"><![CDATA[编写程序，从键盘输入任一正整数n,计算并输出数字n的阶乘n! 1234567891011121314151617181920package factorial;import java.util.Scanner;public class Factorial &#123; public static int solve(int n) &#123; //求n的阶乘 if(n == 0 || n == 1) return 1; else return solve(n - 1) * n; &#125; public static void main(String[] args) &#123; // TODO Auto-generated method stub Scanner scan = new Scanner(System.in); System.out.println("输入任一整数："); int n = scan.nextInt(); //输入任一整数n System.out.println(n + "的阶乘为：" + solve(n)); &#125;&#125;]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>2017</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[BubbleSort]]></title>
+    <url>%2F2019%2F01%2F11%2F%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%2F</url>
+    <content type="text"><![CDATA[12345678910111213141516171819202122232425262728293031323334353637383940package bubbleSort;import java.util.Scanner;public class BubbleSort &#123; public static void main(String[] args) &#123; // TODO Auto-generated method stub int[] a; //定义一个数组 Scanner scan = new Scanner(System.in); System.out.println("输入待排序数组长度"); int length = scan.nextInt(); //输入数组的长度 a = new int[length + 1]; //分配内存 System.out.println("输入待排序数组"); for(int i = 0; i &lt; length; ++i) //输入待排序数组 a[i] = scan.nextInt(); boolean ok = false; for(int i = 0; i &lt; length - 1; ++i) &#123; //冒泡排序 ok = false; for(int j = 0; j &lt; length - i - 1; ++j) if(a[j] &gt; a[j + 1]) &#123; //若后一个元素比前一个大，则交换 ok = true; //发生交换 int temp = a[j + 1]; a[j + 1] = a[j]; a[j] = temp; &#125; if(ok == false) break; //如果此趟没有发生交换，则说明数组已经有序 &#125; System.out.println("输入排序后数组"); for(int i = 0; i &lt; length; ++i) &#123; //输出排序后数组 if(i != 0) System.out.print(" "); //按1 2 3 4 5的格式输出 System.out.print(a[i]); &#125; System.out.print("\n"); &#125;&#125;]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>2017</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2019%2F01%2F11%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
