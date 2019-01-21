@@ -173,6 +173,7 @@
   <div class="container sidebar-position-left 
   page-home">
     <div class="headband"></div>
+    <a href="https://github.com/Qreply" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
@@ -438,79 +439,22 @@
       
         
           
-            <h2 id="服务器运行状态相关命令"><a href="#服务器运行状态相关命令" class="headerlink" title="服务器运行状态相关命令"></a>服务器运行状态相关命令</h2><h3 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h3><p>查看系统进程线程</p>
-<h4 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h4><p><code>ps -aux</code> 查看所有进程<br><code>ps -T -p ${pid}</code> 查看某个进程的线程</p>
-<h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><p><a href="https://linux.cn/article-4743-1.html" target="_blank" rel="noopener">10个重要的Linux ps命令实战</a></p>
-<h3 id="pstree"><a href="#pstree" class="headerlink" title="pstree"></a>pstree</h3><p>查看系统进程树，他可以把各个进程之间的关系用树形结构标识出来。</p>
-<h4 id="基本用法-1"><a href="#基本用法-1" class="headerlink" title="基本用法"></a>基本用法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pstree</span><br></pre></td></tr></table></figure>
-<h3 id="top"><a href="#top" class="headerlink" title="top"></a>top</h3><p>查看系统进程线程运行情况，包裹资源的使用情况，系统负载等。</p>
-<h4 id="基本用法-2"><a href="#基本用法-2" class="headerlink" title="基本用法"></a>基本用法</h4><p><code>top</code> 列出所有线程负载信息<br><code>top -H</code> 列出所有线程的负载信息<br><code>top -H -p ${pid}</code> 列出某个pid下所有线程的负载信息</p>
-<h3 id="free"><a href="#free" class="headerlink" title="free"></a>free</h3><p>查看内存及使用情况</p>
-<h4 id="基本用法-3"><a href="#基本用法-3" class="headerlink" title="基本用法"></a>基本用法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">free</span><br></pre></td></tr></table></figure>
-<h2 id="文件操作相关"><a href="#文件操作相关" class="headerlink" title="文件操作相关"></a>文件操作相关</h2><h3 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h3><p>查看配置文件，或者是日志文件，但是有点需要注意，cat命令会把整个文件输出到终端了，如果文件内容非常多，建议使用grep进行过滤，或者直接用less或more命令。</p>
-<h4 id="基本用法-4"><a href="#基本用法-4" class="headerlink" title="基本用法"></a>基本用法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat file.txt</span><br></pre></td></tr></table></figure>
-<h3 id="tail"><a href="#tail" class="headerlink" title="tail"></a>tail</h3><p>查看某个文件的尾部，或者查看标准出入的最末尾，默认值显示10行，可以用<code>-n</code>参数来指定输出多少行。</p>
-<h4 id="基本用法-5"><a href="#基本用法-5" class="headerlink" title="基本用法"></a>基本用法</h4><p><code>tail -n 100 file.txt</code> 输出最末尾的100行<br><code>tail -f file.txt</code> 随着文件新增，持续输出新增的内容，一般用来看实时日志</p>
-<h3 id="head"><a href="#head" class="headerlink" title="head"></a>head</h3><p>和tail命令很相似，不过head是输出头部内容</p>
-<h4 id="基本用法-6"><a href="#基本用法-6" class="headerlink" title="基本用法"></a>基本用法</h4><p><code>head -n 100 file.txt</code> 输出最开始的100行</p>
-<h3 id="more"><a href="#more" class="headerlink" title="more"></a>more</h3><p>也是用来查看文件，但more命令只加载一屏的内容，可以向下翻动，因为加载的内容少，所以比cat快多了。</p>
-<h4 id="基本用法-7"><a href="#基本用法-7" class="headerlink" title="基本用法"></a>基本用法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">more file.txt</span><br></pre></td></tr></table></figure>
-<h3 id="less"><a href="#less" class="headerlink" title="less"></a>less</h3><p>和more很像，但是可以上下翻动</p>
-<h4 id="基本用法-8"><a href="#基本用法-8" class="headerlink" title="基本用法"></a>基本用法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">less file.txt</span><br></pre></td></tr></table></figure>
-<h3 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h3><h4 id="基本用法-9"><a href="#基本用法-9" class="headerlink" title="基本用法"></a>基本用法</h4><p><code>grep &quot;abc&quot; file</code> 从file中筛选出包含 abc的行。</p>
-<h3 id="awk"><a href="#awk" class="headerlink" title="awk"></a>awk</h3><p>在文件有多列的时候，可以用awk输出具体某几列，或者做一些简单的统计 求和，求平均值啊，再或者做一下简单的数据格式化。</p>
-<h4 id="基本用法-10"><a href="#基本用法-10" class="headerlink" title="基本用法"></a>基本用法</h4><p><code>cat data | awk &#39;{print $1,$3,$5}&#39;</code> 输出第1 3 5列，注意下标是从1开始<br><code>cat data | awk &#39;{ sum += $1 } END { print sum }&#39;</code> 对第一列求和<br><code>cat data | awk -F&#39;\t&#39; &#39;{print $1,$3}&#39;</code> 把每行数据按tab分列，并输出1 3列</p>
-<h4 id="参考资料-1"><a href="#参考资料-1" class="headerlink" title="参考资料"></a>参考资料</h4><p><a href="http://www.ruanyifeng.com/blog/2018/11/awk.html" target="_blank" rel="noopener">阮一峰 awk介绍</a></p>
-<h3 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h3><p>对标准内容做排序，</p>
-<h4 id="基本用法-11"><a href="#基本用法-11" class="headerlink" title="基本用法"></a>基本用法</h4><p><code>cat file|sort</code> 把file里的数据排序，注意是按字典序排的，如果想按数值排，需要能够加-n参数<br><code>cat file|sort -k2 -n -r</code> 按第二列 数值 倒序 排序，-k指定第几列，-r是翻转reverse的意思</p>
-<h3 id="uniq"><a href="#uniq" class="headerlink" title="uniq"></a>uniq</h3><p>对排序好的内容去重，注意它只是把相邻且相同的去重，所以如果想要全局去重，需要先用sort排序。</p>
-<h4 id="基本用法-12"><a href="#基本用法-12" class="headerlink" title="基本用法"></a>基本用法</h4><p><code>cat file|sort|uniq</code> 把file里的文件排序并去重<br><code>cat file|sort|uniq -c</code> 把file里的文件排序并去重，且输出每行出现的次数</p>
-<h3 id="sed"><a href="#sed" class="headerlink" title="sed"></a>sed</h3><h3 id="parallel"><a href="#parallel" class="headerlink" title="parallel"></a>parallel</h3><p>linux大部分命令都是单进程的，这个命令可以让其他命令多进程执行。</p>
-<h3 id="参考资料-2"><a href="#参考资料-2" class="headerlink" title="参考资料"></a>参考资料</h3><p><a href="https://www.jianshu.com/p/c5a2369fa613" target="_blank" rel="noopener">15分钟神器gnu parallel 入门观止</a></p>
-<h2 id="scp"><a href="#scp" class="headerlink" title="scp"></a>scp</h2><p>之前运维大量机器的时候，通常需要批量修改某个配置文件，都是在一台机器上改好，然后用scp脚本分发到其他机器上去的，大大提高效率。</p>
-<h3 id="基本用法-13"><a href="#基本用法-13" class="headerlink" title="基本用法"></a>基本用法</h3><p><code>scp aaa.txt test@192.168.1.3:/tmp/</code> 把当前目录下的aaa.txt文件通过192.168.1.3上的test账号放到/tmp目录下<br><code>scp test@192.168.1.3:/tmp/aaa.txt .</code> 和上一条相反</p>
-<h2 id="磁盘及IO"><a href="#磁盘及IO" class="headerlink" title="磁盘及IO"></a>磁盘及IO</h2><h3 id="du"><a href="#du" class="headerlink" title="du"></a>du</h3><p>查看目录大小</p>
-<h4 id="基本用法-14"><a href="#基本用法-14" class="headerlink" title="基本用法"></a>基本用法</h4><p><code>du -h --max-depth=1</code> 输出最深1层的目录，然后文件大小用人类可读的方式，比如1K 234M 2G</p>
-<h3 id="df"><a href="#df" class="headerlink" title="df"></a>df</h3><p>查看磁盘大小和占用情况</p>
-<h4 id="基本用法-15"><a href="#基本用法-15" class="headerlink" title="基本用法"></a>基本用法</h4><p><code>df -h</code> 查看各个分区的大小和使用情况</p>
-<h3 id="iostat"><a href="#iostat" class="headerlink" title="iostat"></a>iostat</h3><p>查看磁盘的io状态</p>
-<h3 id="iotop"><a href="#iotop" class="headerlink" title="iotop"></a>iotop</h3><p>可以类似于top目录一样，实时显示各个进程的io状态。</p>
-<h3 id="find"><a href="#find" class="headerlink" title="find"></a>find</h3><p>查找文件，查找条件可以是文件名，文件日期，文件大小，很强大。 </p>
-<h4 id="基本用法-16"><a href="#基本用法-16" class="headerlink" title="基本用法"></a>基本用法</h4><p><code>find /home/test -iname &quot;test.txt</code> 在/home/test/下找文件名为test.txt的文件，也支持通配符<br><code>find /home/test -isize +100M</code> 查找/home/test下大于100M的文件</p>
-<h4 id="参考资料-3"><a href="#参考资料-3" class="headerlink" title="参考资料"></a>参考资料</h4><p><a href="https://en.wikipedia.org/wiki/Find_(Unix" target="_blank" rel="noopener">wikipedia unix find</a>)</p>
-<h3 id="locate"><a href="#locate" class="headerlink" title="locate"></a>locate</h3><p>定位某个具体文件的位置，locate命令要比find -name快得多，原因是它不搜索具体目录，而是搜索一个数据库/var/lib/mlocate/mlocate.db，这个数据库会通过一个cron定时更新，所以有可能新建的文件会检索不到。</p>
-<h4 id="基本用法-17"><a href="#基本用法-17" class="headerlink" title="基本用法"></a>基本用法</h4><p><code>locate a.txt</code> 定位a.txt的位置，如果系统中有多个a.txt，会全部显示出来。</p>
-<h3 id="tree"><a href="#tree" class="headerlink" title="tree"></a>tree</h3><p>可以看到树状目录结构，</p>
-<h4 id="基本用法-18"><a href="#基本用法-18" class="headerlink" title="基本用法"></a>基本用法</h4><p><code>tree -L 2</code> 只显示两层树状结构</p>
-<h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><h3 id="ping"><a href="#ping" class="headerlink" title="ping"></a>ping</h3><p>查看网络是否通</p>
-<h4 id="基本用法-19"><a href="#基本用法-19" class="headerlink" title="基本用法"></a>基本用法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping www.baidu.com</span><br></pre></td></tr></table></figure>
-<h3 id="nc"><a href="#nc" class="headerlink" title="nc"></a>nc</h3><p>netcat，可以用来看远程某个端口是否打开，功能很强大，但是我用到的不多。</p>
-<h4 id="基本用法-20"><a href="#基本用法-20" class="headerlink" title="基本用法"></a>基本用法</h4><p><code>nc -z xindoo.me 443</code> 检测我服务器上的443端口是否开放（当然是开的）</p>
-<h4 id="参考资料-4"><a href="#参考资料-4" class="headerlink" title="参考资料"></a>参考资料</h4><p><a href="https://blog.csdn.net/freeking101/article/details/53289198" target="_blank" rel="noopener">linux nc命令介绍</a></p>
-<h3 id="route"><a href="#route" class="headerlink" title="route"></a>route</h3><p>查看和操作本机路由表</p>
-<h4 id="基本用法-21"><a href="#基本用法-21" class="headerlink" title="基本用法"></a>基本用法</h4><p><code>route</code> 列出本地路由表</p>
-<h4 id="参考资料-5"><a href="#参考资料-5" class="headerlink" title="参考资料"></a>参考资料</h4><p><a href="https://baike.baidu.com/item/ROUTE%E5%91%BD%E4%BB%A4/6698201?fr=aladdin" target="_blank" rel="noopener">百度百科 route命令</a></p>
-<h3 id="netstat"><a href="#netstat" class="headerlink" title="netstat"></a>netstat</h3><p>查看本机的网络状态，可以看到端口占用情况和网络链接情况。</p>
-<h4 id="基本用法-22"><a href="#基本用法-22" class="headerlink" title="基本用法"></a>基本用法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -antp</span><br></pre></td></tr></table></figure>
-<h3 id="traceroute"><a href="#traceroute" class="headerlink" title="traceroute"></a>traceroute</h3><p>查看一个请求到目标服务器所经过的所有路由节点，一般用来排查网络问题。</p>
-<h4 id="基本用法-23"><a href="#基本用法-23" class="headerlink" title="基本用法"></a>基本用法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">traceroute www.baidu.com</span><br></pre></td></tr></table></figure>
-<h4 id="参考资料-6"><a href="#参考资料-6" class="headerlink" title="参考资料"></a>参考资料</h4><p><a href="https://baike.baidu.com/item/Netstat/527020?fr=aladdin" target="_blank" rel="noopener">百度百科 netstat</a></p>
-<h3 id="iftop"><a href="#iftop" class="headerlink" title="iftop"></a>iftop</h3><p>查看实时网络io情况</p>
-<h3 id="lsof"><a href="#lsof" class="headerlink" title="lsof"></a>lsof</h3><p>查看端口占用</p>
-<h3 id="dig"><a href="#dig" class="headerlink" title="dig"></a>dig</h3><p>查看域名的信息</p>
-<h4 id="基本用法-24"><a href="#基本用法-24" class="headerlink" title="基本用法"></a>基本用法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dig www.baidu.com</span><br></pre></td></tr></table></figure>
-<h4 id="参考资料-7"><a href="#参考资料-7" class="headerlink" title="参考资料"></a>参考资料</h4><p><a href="https://www.cnblogs.com/longyongzhen/p/6592954.html" target="_blank" rel="noopener">dig 命令介绍</a></p>
-<h3 id="curl"><a href="#curl" class="headerlink" title="curl"></a>curl</h3><p>发起一个http请求，来验证服务是否能正常访问的，它有获取html源码的功能。</p>
-<h4 id="基本用法-25"><a href="#基本用法-25" class="headerlink" title="基本用法"></a>基本用法</h4><p><code>curl www.baidu.com</code><br><code>curl -I www.baidu.com</code> 获取请求baidu.com的请求头</p>
-<h4 id="参考资料-8"><a href="#参考资料-8" class="headerlink" title="参考资料"></a>参考资料</h4><p><a href="https://curl.haxx.se/docs/manpage.html" target="_blank" rel="noopener">curl的用法(英文)</a></p>
-<h3 id="wget"><a href="#wget" class="headerlink" title="wget"></a>wget</h3><p>下载网络上一个文件，基本上就是有个命令行版的下载工具了。</p>
-<h4 id="基本用法-26"><a href="#基本用法-26" class="headerlink" title="基本用法"></a>基本用法</h4><p><code>wget xindoo.me/test.txt</code> 把服务器上test.txt文件下载到本地</p>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="yum-apt-install"><a href="#yum-apt-install" class="headerlink" title="yum|apt install"></a>yum|apt install</h3><p>很多时候服务器上没有我们想要的工具，可以用这个命令安装下，yum是Fedora和RedHat以及CentOS中的Shell前端软件包管理器， apt是ubuntu平台上的。</p>
-<h4 id="基本用法-27"><a href="#基本用法-27" class="headerlink" title="基本用法"></a>基本用法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install curl`</span><br><span class="line">`apt install curl</span><br></pre></td></tr></table></figure>
-<h3 id="man"><a href="#man" class="headerlink" title="man"></a>man</h3><p>这个命令是用来查看其它命令手册的，可以看到具体某个命令的详细作用，和具体参数。这个是个很重要的命令了，一般他会比各命令自带的–help详细很多。</p>
-<h4 id="基本用法-28"><a href="#基本用法-28" class="headerlink" title="基本用法"></a>基本用法</h4><p><code>man curl</code> 查看curl命令的手册</p>
-
+            <p>
+              服务器运行状态相关命令ps查看系统进程线程
+基本用法ps -aux 查看所有进程ps -T -p ${pid} 查看某个进程的线程
+参考资料10个重要的Linux ps命令实战
+pstree查看系统进
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/01/20/linux运行状态相关命令/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -681,33 +625,21 @@
       
         
           
-            <h1 id="Mac下使用Hexo-Github搭建个人博客"><a href="#Mac下使用Hexo-Github搭建个人博客" class="headerlink" title="Mac下使用Hexo+Github搭建个人博客"></a>Mac下使用Hexo+Github搭建个人博客</h1><h2 id="hexo博客系统搭建"><a href="#hexo博客系统搭建" class="headerlink" title="hexo博客系统搭建"></a>hexo博客系统搭建</h2><p>Hexo的介绍可以看看官方<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">文档</a>，说得很详细，简单的说就是一个博客框架。</p>
-<h3 id="1-Github账号注册及仓库创建"><a href="#1-Github账号注册及仓库创建" class="headerlink" title="1.Github账号注册及仓库创建"></a>1.Github账号注册及仓库创建</h3><p><img src="/blog/source/img/input_name.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190120135541171.png" alt="新建仓库"></p>
-<p>创建仓库的名字必须为username.github.io，我的用户名为Qreply，因此我创建的仓库就是Qreply.github.io，这是很关键的一点，很重要。输入名字后，直接点最下面绿色的按钮，创建新仓库。这一部分基本完成了，接下去需要在终端操作。</p>
-<p><img src="https://img-blog.csdnimg.cn/20190120141206769.png" alt="仓库名称"></p>
-<h2 id="2-环境配置"><a href="#2-环境配置" class="headerlink" title="2.环境配置"></a>2.环境配置</h2><p>·安装git、node.js和hexo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#首先检查是否安装了git和node.js,终端输入以下命令</span><br><span class="line">node -v #是否出现安装版本信息，出现说明已经安装</span><br><span class="line">git --version #同上述情况</span><br><span class="line">如果没有安装，则进行安装</span><br><span class="line">#通过homebrew安装</span><br><span class="line">/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</span><br><span class="line">brew install git</span><br><span class="line">brew install node</span><br></pre></td></tr></table></figure></p>
-<p>·如果已经安装好了上述的软件，那么可以安装hexo，然后等待安装成功即可。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></p>
-<p>·创建blog文件夹，并初始化建立博客框架<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 在你的家目录下创建一个blog文件夹</span><br><span class="line">mkdir blog</span><br><span class="line"># 进入目录</span><br><span class="line">cd blog</span><br><span class="line"># 初始化目录</span><br><span class="line">hexo init</span><br><span class="line">开启本地服务 </span><br><span class="line"># hexo s</span><br></pre></td></tr></table></figure></p>
-<p>出现以下信息，说明你可以本地访问博客系统，在浏览器输入4000这个网址，就可以看到博客首页。<br><img src="https://img-blog.csdnimg.cn/20190120143803669.png" alt="在这里插入图片描述"></p>
-<p><img src="https://img-blog.csdnimg.cn/20190120144202127.png" alt="在这里插入图片描述"></p>
-<h2 id="3-博客关联到Github仓库"><a href="#3-博客关联到Github仓库" class="headerlink" title="3. 博客关联到Github仓库"></a>3. 博客关联到Github仓库</h2><p>在第一步的时候，我们已经将仓库创建好了，这里就需要用到了。</p>
-<p>·首先我们要编辑图中_config.yml文件，这是博客的主要配置文件，在下面一部分，我们要频繁使用这个配置文件，这里先编辑一步，为了管理GitHub账号。<br><img src="https://img-blog.csdnimg.cn/2019012015544847.png" alt="在这里插入图片描述"><br>·打开文件之后，在文档最后，输入红色大框中的内容，只需要将你的username替换就可以了，其他无需更改。<br><img src="https://img-blog.csdnimg.cn/20190120155506637.png" alt="在这里插入图片描述"><br>·然后在目录中执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 产生静态网页</span><br><span class="line">hexo g</span><br><span class="line"># 部署到GitHub page上</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
-<p>然后你需要输入你GitHub的用户名和密码，这样你就就可以使用你的仓库名去访问你的博客主页了。为了每一次部署不必一种输入密码，我们可以生成秘钥，然后提交到GitHub，进行关联，那么你下次就不需要再输入密码了。<br>·关联GitHub账号，免密提交</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 用你注册GitHub时的邮箱号，进行秘钥生成</span><br><span class="line">cd ~</span><br><span class="line">ssh-keygen -t rsa -C &quot;xxxxxxx@qq.com&quot;</span><br><span class="line"># 系统就会生成一个隐藏文件夹.ssh</span><br><span class="line">cd .ssh</span><br><span class="line">ls</span><br><span class="line"># 复制公钥</span><br><span class="line">vim id_rsa.pub</span><br></pre></td></tr></table></figure>
-<p>点击箭头的按钮，进入设置，然后点击SSH and GPG keys，创建新的SSH，将之前复制的公钥黏贴，提交，OK。</p>
-<p><img src="https://img-blog.csdnimg.cn/20190120160825203.png" alt="在这里插入图片描述"><br>进入settings</p>
-<p><img src="https://img-blog.csdnimg.cn/20190120161011234.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190120161020474.png" alt="在这里插入图片描述"></p>
-<h2 id="4-博客的基本配置和发布新文章"><a href="#4-博客的基本配置和发布新文章" class="headerlink" title="4.博客的基本配置和发布新文章"></a>4.博客的基本配置和发布新文章</h2><p>1.一些基本配置可以在_config.yml中进行修改，如博客名、作者名等，另外如果你采用了别的主题，在主题文件夹中也会有一个_config.yml文件，可以在里面进行主题的一些修改。<br>2.发布新文章时，先执行以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post &apos;文章标题&apos;</span><br></pre></td></tr></table></figure></p>
-<p>这时在source-&gt;_posts文件下能看到新建的文章，是md格式，hexo支持markdown语法，我们可以用markdown编辑器进行编辑。<br>3.更新到github<br>我们每次做了修改后，都需要执行以下命令以更新github配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
-<h2 id="5-绑定个人域名"><a href="#5-绑定个人域名" class="headerlink" title="5. 绑定个人域名"></a>5. 绑定个人域名</h2><p>1)购买域名（我在腾讯云购买的域名）<br>2)域名解析<br>注册一个DNSPod账号，登录之后进入需要绑定的域名，在域名解析界面添加3条记录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@          A             192.30.252.153</span><br><span class="line">@          A             192.30.252.154</span><br><span class="line">www      CNAME         username.github.io.</span><br></pre></td></tr></table></figure></p>
-<p>如图所示：<br><img src="https://img-blog.csdnimg.cn/20190120162109432.png" alt="在这里插入图片描述"><br>3)配置hexo<br>新建一个名为CNAME的文件，无后缀，内容为你的域名地址。<br>将该文件放入本地博客的source文件夹里面，并更新到Github。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d -g</span><br></pre></td></tr></table></figure>
-<p>到这里就绑定域名成功了。</p>
-<h2 id="6-Hexo博客美化及功能增添"><a href="#6-Hexo博客美化及功能增添" class="headerlink" title="6.Hexo博客美化及功能增添"></a>6.Hexo博客美化及功能增添</h2><p><strong>1）选主题</strong><br>Hexo官网：<a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a><br>里面有特别多的主题可以选择，我在这里选的是next这个主题。下载主题：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/blog</span><br><span class="line">git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-<p>·修改站点配置文件：_config.yml，将里面76行的theme由landscape修改为next<br><img src="https://img-blog.csdnimg.cn/20190120164202734.png" alt="在这里插入图片描述"><br>·更换新的主题，可能会有一些延迟</p>
-
+            <p>
+              Mac下使用Hexo+Github搭建个人博客hexo博客系统搭建Hexo的介绍可以看看官方文档，说得很详细，简单的说就是一个博客框架。
+1.Github账号注册及仓库创建
+创建仓库的名字必须为use
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/01/20/Mac下使用Hexo-Github搭建个人博客/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -866,10 +798,20 @@
       
         
           
-            <p>从键盘上随机输入20个正整数，找出并输出所包含的质数（质数是除了1和它本身之外，不能被其他数整除的正整数，例如2，3，5，11，13等）。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> primeNumber;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PrimeNumber</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">IsPrime</span><span class="params">(<span class="keyword">int</span> a)</span> </span>&#123; <span class="comment">//判断是否为质数</span></span><br><span class="line">		<span class="keyword">if</span>(a == <span class="number">1</span>) <span class="keyword">return</span> <span class="keyword">false</span>; <span class="comment">//1不是质数</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= Math.sqrt(a); ++i) &#123;</span><br><span class="line">			<span class="keyword">if</span>(a % i == <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		Scanner scan = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		<span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">21</span>]; <span class="comment">//定义一个数组</span></span><br><span class="line">		<span class="comment">//输入20个正整数</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">20</span>; ++i)</span><br><span class="line">			arr[i] = scan.nextInt();</span><br><span class="line">		<span class="comment">//找出质数并输出</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">20</span>; ++i) &#123;</span><br><span class="line">			<span class="comment">//判断是不是质数，是就输出</span></span><br><span class="line">			<span class="keyword">if</span>(IsPrime(arr[i])) System.out.print(arr[i] + <span class="string">" "</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+            <p>
+              从键盘上随机输入20个正整数，找出并输出所包含的质数（质数是除了1和它本身之外，不能被其他数整除的正整数，例如2，3，5，11，13等）。
+package primeNumber;import jav
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/01/12/质数/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1028,10 +970,20 @@
       
         
           
-            <p>请编写程序，将用户输入否认一个字符串（不多于100个字符），其中的单词按照逆序，重新输出。例如输入字符串”this is a dog”，输出为”dog a is this”。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> reverseString;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReverseString</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		Scanner scan = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		String str1 = scan.nextLine();<span class="comment">//输入字符串</span></span><br><span class="line">		String[] strs = str1.split(<span class="string">" "</span>);<span class="comment">//以空格分割成多个字符串</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = strs.length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; --i) &#123;<span class="comment">//逆序输出</span></span><br><span class="line">			<span class="keyword">if</span>(i != strs.length - <span class="number">1</span>) System.out.print(<span class="string">" "</span>);</span><br><span class="line">			System.out.print(strs[i]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+            <p>
+              请编写程序，将用户输入否认一个字符串（不多于100个字符），其中的单词按照逆序，重新输出。例如输入字符串”this is a dog”，输出为”dog a is this”。
+package reve
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/01/12/字符串反转/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1190,10 +1142,20 @@
       
         
           
-            <p>编写一个考试成绩统计程序，将从键盘上输入的学生考试成绩（最多40个），计算输出学生平均成绩，以及不及格学生数量（成绩&lt;60分）和成绩优秀学生数量（成绩&gt;=90分）。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> scoreStudent;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ScoreStudnet</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		Scanner scan = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		<span class="keyword">int</span>[] score = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">50</span>];<span class="comment">//定义一个数组,存储学生成绩</span></span><br><span class="line">		<span class="keyword">int</span> length = <span class="number">0</span>, sum = <span class="number">0</span>, lowScore = <span class="number">0</span>, highScore = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">while</span>(scan.hasNextInt()) &#123; <span class="comment">//是否还有成绩输入</span></span><br><span class="line">			<span class="keyword">int</span> a = scan.nextInt(); <span class="comment">//学生成绩</span></span><br><span class="line">			score[length++] = a;</span><br><span class="line">			<span class="keyword">if</span>(a &lt; <span class="number">60</span>) lowScore++;  <span class="comment">//成绩低于60的，不及格人数加1</span></span><br><span class="line">			<span class="keyword">if</span>(a &gt;= <span class="number">90</span>) highScore++;  <span class="comment">//成绩大于等于90的，优秀人数加1</span></span><br><span class="line">			sum += a;  <span class="comment">//总成绩</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//平均成绩</span></span><br><span class="line">		<span class="keyword">double</span> average = (<span class="keyword">double</span>)sum / (length * <span class="number">0.01</span>);</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"学生平均成绩为："</span> + average);</span><br><span class="line">		System.out.println(<span class="string">"不及格学生数量为："</span> + lowScore); <span class="comment">//不及格人数</span></span><br><span class="line">		System.out.println(<span class="string">"成绩优秀学生数量为："</span> + highScore);<span class="comment">//成绩优秀人数</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+            <p>
+              编写一个考试成绩统计程序，将从键盘上输入的学生考试成绩（最多40个），计算输出学生平均成绩，以及不及格学生数量（成绩&lt;60分）和成绩优秀学生数量（成绩&gt;=90分）。
+package sco
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/01/12/学生成绩统计/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1352,10 +1314,20 @@
       
         
           
-            <p>从键盘输入一个字符串（不多于80个字符），将其中的数字字符按原顺序组成一个新字符串，并输出。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> numString;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NumString</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		Scanner scan = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		String str = scan.next(); <span class="comment">//输入一个字符串</span></span><br><span class="line">		<span class="keyword">char</span> [] strArr = str.toCharArray(); <span class="comment">//把字符串转为数组</span></span><br><span class="line"></span><br><span class="line">		StringBuffer buf = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; strArr.length; ++i) &#123;</span><br><span class="line">			<span class="keyword">char</span> a = strArr[i];</span><br><span class="line">			<span class="keyword">if</span>(Character.isDigit(a)) <span class="comment">//判断是否为数字</span></span><br><span class="line">				buf.append(a);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		String s = buf.toString();  <span class="comment">//转换为字符串</span></span><br><span class="line">		System.out.println(s); <span class="comment">//输出新字符串</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+            <p>
+              从键盘输入一个字符串（不多于80个字符），将其中的数字字符按原顺序组成一个新字符串，并输出。
+package numString;import java.util.Scanner;public cla
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/01/12/字符-数字统计/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1514,10 +1486,20 @@
       
         
           
-            <p>编写程序，从键盘输入任一正整数n,计算并输出数字n的阶乘n!</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> factorial;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Factorial</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123; <span class="comment">//求n的阶乘</span></span><br><span class="line">		<span class="keyword">if</span>(n == <span class="number">0</span> || n == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> solve(n - <span class="number">1</span>) * n;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		Scanner scan = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		System.out.println(<span class="string">"输入任一整数："</span>);</span><br><span class="line">		<span class="keyword">int</span> n = scan.nextInt(); <span class="comment">//输入任一整数n</span></span><br><span class="line">		System.out.println(n + <span class="string">"的阶乘为："</span> + solve(n));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+            <p>
+              编写程序，从键盘输入任一正整数n,计算并输出数字n的阶乘n!
+package factorial;import java.util.Scanner;public class Factorial &#1
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/01/12/n的阶乘/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1688,9 +1670,19 @@
       
         
           
-            <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> bubbleSort;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BubbleSort</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">int</span>[] a; <span class="comment">//定义一个数组</span></span><br><span class="line"></span><br><span class="line">		Scanner scan = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		System.out.println(<span class="string">"输入待排序数组长度"</span>);</span><br><span class="line">		<span class="keyword">int</span> length = scan.nextInt();  <span class="comment">//输入数组的长度</span></span><br><span class="line">		a = <span class="keyword">new</span> <span class="keyword">int</span>[length + <span class="number">1</span>]; <span class="comment">//分配内存</span></span><br><span class="line">		System.out.println(<span class="string">"输入待排序数组"</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length; ++i) <span class="comment">//输入待排序数组</span></span><br><span class="line">			a[i] = scan.nextInt();</span><br><span class="line"></span><br><span class="line">		<span class="keyword">boolean</span> ok = <span class="keyword">false</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length - <span class="number">1</span>; ++i) &#123; <span class="comment">//冒泡排序</span></span><br><span class="line">			ok = <span class="keyword">false</span>;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; length - i - <span class="number">1</span>; ++j)</span><br><span class="line">				<span class="keyword">if</span>(a[j] &gt; a[j + <span class="number">1</span>]) &#123;  <span class="comment">//若后一个元素比前一个大，则交换</span></span><br><span class="line">					ok = <span class="keyword">true</span>; <span class="comment">//发生交换</span></span><br><span class="line">					<span class="keyword">int</span> temp = a[j + <span class="number">1</span>];</span><br><span class="line">					a[j + <span class="number">1</span>] = a[j];</span><br><span class="line">					a[j] = temp;</span><br><span class="line">				&#125;</span><br><span class="line">			<span class="keyword">if</span>(ok == <span class="keyword">false</span>) <span class="keyword">break</span>; <span class="comment">//如果此趟没有发生交换，则说明数组已经有序</span></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"输入排序后数组"</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length; ++i) &#123;  <span class="comment">//输出排序后数组</span></span><br><span class="line">			<span class="keyword">if</span>(i != <span class="number">0</span>) System.out.print(<span class="string">" "</span>);  <span class="comment">//按1 2 3 4 5的格式输出</span></span><br><span class="line">			System.out.print(a[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.print(<span class="string">"\n"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+            <p>
+              package bubbleSort;import java.util.Scanner;public class BubbleSort &#123;	public static void main(S
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/01/11/冒泡排序/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1827,17 +1819,19 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+            <p>
+              Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any pro
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/01/11/hello-world/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
