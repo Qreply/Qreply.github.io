@@ -2023,7 +2023,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #096370;
+  background: #2d34d2;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3125,4 +3125,10 @@ ul.breadcrumb li+li:last-child {
   .post-body {
     text-align: justify;
   }
+}
+body {
+  background: url("/blog/themes/next/source/images/bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 50%;
 }
