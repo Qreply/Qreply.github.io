@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[计算机操作系统学习总结]]></title>
+    <url>%2F2019%2F01%2F23%2F%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93%2F</url>
+    <content type="text"><![CDATA[一、概述1.操作系统引论操作系统基本特性注意：这里指的是通用操作系统 1.并发 并发：多个事件在同一时间间隔内发生。 并行(parallel)：多个事件在同一时刻发生。 进程是指在系统中能独立运行并作为资源分配的基本单位，由一组机器指令、数据和堆栈等组成的，是一个活动实体。 多个进程之间可以并发执行和交换信息。一个进程在运行时需要一定的资源，如CPU、存储空间及I/O设备等。 通常在一个进程中可以包含若干个线程，它们可以利用进程所拥有的资源。在引入线程的OS中，通常都是把进程作为分配资源的基本单位，而把线程作为独立运行和独立调度的基本单位。 2.共享 共享：资源可供内存中多个并发执行的进程（线程）共同使用。 有两种共享方式：互斥共享和同时访问。 并发和共享是操作系统的两个最基本的特征： 资源共享以程序(进程)的并发执行为条件； 对资源实施有效管理， 协调好诸进程对共享资源的访问，共享提高程序并发执行的程度。 并发和共享是相互依存的！！ 3.虚拟 虚拟：通过某种技术把一个物理实体变为若干个逻辑上的对应物，主要目的在于提高资源的利用率。 例子： CPU－－每个用户（进程）的”虚处理机” 存储器－－每个进程都占有的地址空间（指令＋数据＋堆栈） 显示设备－－多窗口或虚拟终端(virtual terminal) 打印设备－－将临界资源变为同时访问资源。 主要有两种虚拟技术：时分复用技术（提高资源利用率）和空分复用技术（提高存储空间利用率）。 4.异步 异步：也称不确定性，指进程的执行顺序和执行时间的不确定性。 操作系统的主要功能1.处理机管理功能 进程控制、进程同步、进程通信、进程调度 2.存储器管理功能 内存分配、内存保护、地址映射、内存扩充 3.设备管理功能 缓冲区管理、设备分配与回收、设备独立性 4.文件管理功能 文件存储空间管理、目录管理、文件读写、文件保护 5.操作系统与用户之间的接口 用户接口：联机用户接口、脱机用户接口、图形接口 二、进程管理2.进程的描述与控制进程是进程实体的运行过程，是系统进行资源分配和调度的一个独立单位。 进程的特征：动态性（最基本的特征）、并发性、独立性、异步性 进程的五种状态及转换 引入挂起操作后三个基本状态的转换 具有挂起状态的进程状态 具有创建、终止和挂起状态的进程状态 进程同步1.临界区 对临界资源进行访问的那段代码称为临界区。 进程采取互斥方式，实现对这种资源的共享。 2.同步与互斥 同步：多个进程按一定顺序执行； 互斥：多个进程在同一时刻只有一个进程能进入临界区。 3.信号量 信号量（Semaphore）是一个整型变量，可以对其执行 down 和 up 操作，也就是常见的 P 和 V 操作。 down : 如果信号量大于 0 ，执行 -1 操作；如果信号量等于 0，进程睡眠，等待信号量大于 0； up ：对信号量执行 +1 操作，唤醒睡眠的进程让其完成 down 操作。 down 和 up 操作需要被设计成原语，不可分割，通常的做法是在执行这些操作的时候屏蔽中断。 如果信号量的取值只能为 0 或者 1，那么就成为了 互斥量（Mutex） ，0 表示临界区已经加锁，1 表示临界区解锁。 12345678910111213typedef int semaphore;semaphore mutex = 1;void P1() &#123; down(&amp;mutex); // 临界区 up(&amp;mutex);&#125;void P2() &#123; down(&amp;mutex); // 临界区 up(&amp;mutex);&#125; 3.处理机调度与死锁三、内存管理4.存储器管理5.虚拟存储器四、I/O系统6.输入输出系统五、文件管理7.文件管理8.磁盘存储器的管理]]></content>
+      <tags>
+        <tag>操作系统</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Mac下解决Hexo发布博客引用自带图片]]></title>
     <url>%2F2019%2F01%2F22%2FMac%E4%B8%8B%E8%A7%A3%E5%86%B3Hexo%E5%8F%91%E5%B8%83%E5%8D%9A%E5%AE%A2%E5%BC%95%E7%94%A8%E8%87%AA%E5%B8%A6%E5%9B%BE%E7%89%87%2F</url>
     <content type="text"><![CDATA[下载图床神器iPic​ 有了图床神器 iPic，不论屏幕截图、还是复制图片，都可以自动上传、保存 Markdown 格式的链接，直接粘贴插入 图片上传方式参考：https://toolinbox.net/iPic/]]></content>
@@ -48,7 +56,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[PrimeNumber]]></title>
+    <title><![CDATA[质数]]></title>
     <url>%2F2019%2F01%2F12%2F%E8%B4%A8%E6%95%B0%2F</url>
     <content type="text"><![CDATA[从键盘上随机输入20个正整数，找出并输出所包含的质数（质数是除了1和它本身之外，不能被其他数整除的正整数，例如2，3，5，11，13等）。 1234567891011121314151617181920212223242526272829package primeNumber;import java.util.Scanner;public class PrimeNumber &#123; public static boolean IsPrime(int a) &#123; //判断是否为质数 if(a == 1) return false; //1不是质数 for(int i = 2; i &lt;= Math.sqrt(a); ++i) &#123; if(a % i == 0) return false; &#125; return true; &#125; public static void main(String[] args) &#123; // TODO Auto-generated method stub Scanner scan = new Scanner(System.in); int[] arr = new int[21]; //定义一个数组 //输入20个正整数 for(int i = 0; i &lt; 20; ++i) arr[i] = scan.nextInt(); //找出质数并输出 for(int i = 0; i &lt; 20; ++i) &#123; //判断是不是质数，是就输出 if(IsPrime(arr[i])) System.out.print(arr[i] + " "); &#125; &#125;&#125;]]></content>
       <categories>
@@ -61,7 +69,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[ReverseString]]></title>
+    <title><![CDATA[字符串反转]]></title>
     <url>%2F2019%2F01%2F12%2F%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%8D%E8%BD%AC%2F</url>
     <content type="text"><![CDATA[请编写程序，将用户输入否认一个字符串（不多于100个字符），其中的单词按照逆序，重新输出。例如输入字符串”this is a dog”，输出为”dog a is this”。 123456789101112131415161718package reverseString;import java.util.Scanner;public class ReverseString &#123; public static void main(String[] args) &#123; // TODO Auto-generated method stub Scanner scan = new Scanner(System.in); String str1 = scan.nextLine();//输入字符串 String[] strs = str1.split(" ");//以空格分割成多个字符串 for(int i = strs.length - 1; i &gt;= 0; --i) &#123;//逆序输出 if(i != strs.length - 1) System.out.print(" "); System.out.print(strs[i]); &#125; &#125;&#125;]]></content>
       <categories>
@@ -74,7 +82,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[ScoreStudent]]></title>
+    <title><![CDATA[学生成绩统计]]></title>
     <url>%2F2019%2F01%2F12%2F%E5%AD%A6%E7%94%9F%E6%88%90%E7%BB%A9%E7%BB%9F%E8%AE%A1%2F</url>
     <content type="text"><![CDATA[编写一个考试成绩统计程序，将从键盘上输入的学生考试成绩（最多40个），计算输出学生平均成绩，以及不及格学生数量（成绩&lt;60分）和成绩优秀学生数量（成绩&gt;=90分）。 12345678910111213141516171819202122232425262728package scoreStudent;import java.util.Scanner;public class ScoreStudnet &#123; public static void main(String[] args) &#123; // TODO Auto-generated method stub Scanner scan = new Scanner(System.in); int[] score = new int[50];//定义一个数组,存储学生成绩 int length = 0, sum = 0, lowScore = 0, highScore = 0; while(scan.hasNextInt()) &#123; //是否还有成绩输入 int a = scan.nextInt(); //学生成绩 score[length++] = a; if(a &lt; 60) lowScore++; //成绩低于60的，不及格人数加1 if(a &gt;= 90) highScore++; //成绩大于等于90的，优秀人数加1 sum += a; //总成绩 &#125; //平均成绩 double average = (double)sum / (length * 0.01); System.out.println("学生平均成绩为：" + average); System.out.println("不及格学生数量为：" + lowScore); //不及格人数 System.out.println("成绩优秀学生数量为：" + highScore);//成绩优秀人数 &#125;&#125;]]></content>
       <categories>
@@ -87,7 +95,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[StrDigital]]></title>
+    <title><![CDATA[字符-数字统计]]></title>
     <url>%2F2019%2F01%2F12%2F%E5%AD%97%E7%AC%A6-%E6%95%B0%E5%AD%97%E7%BB%9F%E8%AE%A1%2F</url>
     <content type="text"><![CDATA[从键盘输入一个字符串（不多于80个字符），将其中的数字字符按原顺序组成一个新字符串，并输出。 1234567891011121314151617181920212223242526package numString;import java.util.Scanner;public class NumString &#123; public static void main(String[] args) &#123; // TODO Auto-generated method stub Scanner scan = new Scanner(System.in); String str = scan.next(); //输入一个字符串 char [] strArr = str.toCharArray(); //把字符串转为数组 StringBuffer buf = new StringBuffer(); for(int i = 0; i &lt; strArr.length; ++i) &#123; char a = strArr[i]; if(Character.isDigit(a)) //判断是否为数字 buf.append(a); &#125; String s = buf.toString(); //转换为字符串 System.out.println(s); //输出新字符串 &#125;&#125;]]></content>
       <categories>
@@ -100,7 +108,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Factorial]]></title>
+    <title><![CDATA[n的阶乘]]></title>
     <url>%2F2019%2F01%2F12%2Fn%E7%9A%84%E9%98%B6%E4%B9%98%2F</url>
     <content type="text"><![CDATA[编写程序，从键盘输入任一正整数n,计算并输出数字n的阶乘n! 1234567891011121314151617181920package factorial;import java.util.Scanner;public class Factorial &#123; public static int solve(int n) &#123; //求n的阶乘 if(n == 0 || n == 1) return 1; else return solve(n - 1) * n; &#125; public static void main(String[] args) &#123; // TODO Auto-generated method stub Scanner scan = new Scanner(System.in); System.out.println("输入任一整数："); int n = scan.nextInt(); //输入任一整数n System.out.println(n + "的阶乘为：" + solve(n)); &#125;&#125;]]></content>
       <categories>
@@ -113,7 +121,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[BubbleSort]]></title>
+    <title><![CDATA[冒泡排序]]></title>
     <url>%2F2019%2F01%2F11%2F%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%2F</url>
     <content type="text"><![CDATA[12345678910111213141516171819202122232425262728293031323334353637383940package bubbleSort;import java.util.Scanner;public class BubbleSort &#123; public static void main(String[] args) &#123; // TODO Auto-generated method stub int[] a; //定义一个数组 Scanner scan = new Scanner(System.in); System.out.println("输入待排序数组长度"); int length = scan.nextInt(); //输入数组的长度 a = new int[length + 1]; //分配内存 System.out.println("输入待排序数组"); for(int i = 0; i &lt; length; ++i) //输入待排序数组 a[i] = scan.nextInt(); boolean ok = false; for(int i = 0; i &lt; length - 1; ++i) &#123; //冒泡排序 ok = false; for(int j = 0; j &lt; length - i - 1; ++j) if(a[j] &gt; a[j + 1]) &#123; //若后一个元素比前一个大，则交换 ok = true; //发生交换 int temp = a[j + 1]; a[j + 1] = a[j]; a[j] = temp; &#125; if(ok == false) break; //如果此趟没有发生交换，则说明数组已经有序 &#125; System.out.println("输入排序后数组"); for(int i = 0; i &lt; length; ++i) &#123; //输出排序后数组 if(i != 0) System.out.print(" "); //按1 2 3 4 5的格式输出 System.out.print(a[i]); &#125; System.out.print("\n"); &#125;&#125;]]></content>
       <categories>
