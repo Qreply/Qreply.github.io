@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[cocos2d-X游戏开发学习（一）]]></title>
     <url>%2F2019%2F01%2F23%2Fcocos2d-X%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89%2F</url>
-    <content type="text"><![CDATA[游戏原理与机制：渲染驱动（DirectX,openGL，Canvas、NDK)、事件驱动 游戏开发技术：平台型差异（win32开发技术DirectX,openGL、AndroidopenGL，Canvas、NDK、MACOS/IOS Quartz2D,OpenGL、） 1.认识cocos2D-X引擎 cocos2D-X跨平台解决方案 cocos2D-X版本控制 cocos2D-X功能模块 cocos2D-X数据结构 cocos2D-X开发环境搭建]]></content>
+    <content type="text"><![CDATA[游戏原理与机制：渲染驱动（DirectX,openGL，Canvas、NDK)、事件驱动 游戏开发技术：平台型差异（win32开发技术DirectX,openGL、AndroidopenGL，Canvas、NDK、MACOS/IOS Quartz2D,OpenGL、） 1.认识cocos2D-X引擎 cocos2D-X跨平台解决方案 cocos2D-X版本控制 cocos2D-X功能模块 cocos2D-X数据结构 cocos2D-X开发环境搭建 csbcs bn]]></content>
       <tags>
         <tag>cocos2d-x</tag>
         <tag>游戏开发</tag>
