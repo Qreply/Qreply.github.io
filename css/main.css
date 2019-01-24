@@ -2023,7 +2023,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #632b2e;
+  background: #148399;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3127,8 +3127,6 @@ ul.breadcrumb li+li:last-child {
   }
 }
 body {
-  background: url("/blog/themes/next/source/images/bg.jpg");
-  background-repeat: no-repeat;
+  background: url("https://ws4.sinaimg.cn/large/006tNc79ly1fzhxa0xwm6j30sg0hs0vu.jpg");
   background-attachment: fixed;
-  background-position: 50% 50%;
 }
