@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[常用命令]]></title>
+    <url>%2F2019%2F01%2F30%2Fmac%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%2F</url>
+    <content type="text"><![CDATA[Mac常用命令Mac修改文件权限为777可读可写可执行 sudo chmod -R 777 你的文件夹名 Mac查找jdk路径 /usr/libexec/java_home -V Maven 常用命令清除命令 mvn clean 编译命令 mvn compile 打包测试 mvn package 跳过单元测试 mvn clean package -Dmaven.test.skip=true Linux常用命令Samba的配置和使用https://blog.csdn.net/weixin_40806910/article/details/81917077 新建一个用户 useradd name 启动Samba ： 123cd /etccd init.d./smb start]]></content>
+      <tags>
+        <tag>mac</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED解决方法]]></title>
+    <url>%2F2019%2F01%2F30%2FWARNING-REMOTE-HOST-IDENTIFICATION-HAS-CHANGED%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!解决方法 当ssh root@140.143.139.53出现： @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ @ WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! @ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY! Someone could be eavesdropping on you right now (man-in-the-middle attack)! It is also possible that a host key has just been changed. The fingerprint for the RSA key sent by the remote host is SHA256:oeC1BEEtwyoOwfM2dD00cLPSDGCFIJN4f/ijsD7jXXQ. Please contact your system administrator. Add correct host key in /Users/wangdi/.ssh/known_hosts to get rid of this message. Offending ECDSA key in /Users/wangdi/.ssh/known_hosts:1 RSA host key for 140.143.139.53 has changed and you have requested strict checking. Host key verification failed. 解决方法： vim ~/.ssh/known_hosts 删除此文件的内容即可]]></content>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java电商项目实战学习（一）]]></title>
+    <url>%2F2019%2F01%2F30%2FJava%E7%94%B5%E5%95%86%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[一、环境配置 操作系统：MacOS 10.13.2 jdk安装 https://blog.csdn.net/deliciousion/article/details/78046007 配置Tomcat https://blog.csdn.net/qq_2300688967/article/details/81237786 Maven安装https://blog.csdn.net/zixiao217/article/details/78006599 vsftpd安装]]></content>
+      <categories>
+        <category>Java电商项目实战</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>电商网站</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[快速排序]]></title>
     <url>%2F2019%2F01%2F28%2F%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%2F</url>
     <content type="text"><![CDATA[12345678910111213141516171819202122232425262728293031323334353637383940414243package quickSort;import java.util.ArrayList;import java.util.Scanner;public class QuickSort &#123; public static int Partition(ArrayList&lt;Integer&gt; arrayList, int low, int high) &#123; int i = low, j = high; int tmp = arrayList.get(low); while(i &lt; j) &#123; while(i &lt; j &amp;&amp; arrayList.get(j) &gt;= tmp) --j; if(i &lt; j) arrayList.set(i, arrayList.get(j)); while(i &lt; j &amp;&amp; arrayList.get(i) &lt;= tmp) ++i; if(i &lt; j) arrayList.set(j, arrayList.get(i)); &#125; arrayList.set(i, tmp); return i; &#125; public static void quickSort(ArrayList&lt;Integer&gt; arrayList, int low, int high) &#123; if(low &lt; high) &#123; int part = Partition(arrayList, low, high); quickSort(arrayList, low, part - 1); quickSort(arrayList, part + 1, high); &#125; &#125; public static void main(String[] args) &#123; // TODO Auto-generated method stub Scanner scan = new Scanner(System.in); ArrayList&lt;Integer&gt; arrayList = new ArrayList&lt;Integer&gt;(); //定义一个ArrayList,存数组 System.out.println("输入待排序数组长度"); int length = scan.nextInt(); //输入待排序数组长度 System.out.println("输入待排序数组："); for(int i = 0; i &lt; length; ++i) //输入待排序数组 arrayList.add(scan.nextInt()); quickSort(arrayList, 0, arrayList.size() - 1); System.out.println("输出带排序数组"); for(Integer a : arrayList) //输出带排序数组 System.out.print(a + " "); &#125;&#125;]]></content>
